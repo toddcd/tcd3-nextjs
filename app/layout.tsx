@@ -2,6 +2,7 @@
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import ChakraProviders from "./ChakraProviders";
+import SidebarWithHeader from "./components/SidebarWithHeader";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ChakraProviders>{children}</ChakraProviders>
+        <ChakraProviders>
+          <SidebarWithHeader>{children}</SidebarWithHeader>
+        </ChakraProviders>
       </body>
     </html>
   );
