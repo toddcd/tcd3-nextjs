@@ -1,40 +1,15 @@
 "use client";
 import React, { ReactNode } from "react";
 import {
-  IconButton,
-  Avatar,
   Box,
   CloseButton,
   Flex,
-  HStack,
-  VStack,
-  Icon,
   useColorModeValue,
-  Link,
-  Drawer,
-  DrawerContent,
   Text,
-  useDisclosure,
   BoxProps,
-  FlexProps,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
 } from "@chakra-ui/react";
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from "react-icons/fi";
+import { FiHome, FiTrendingUp } from "react-icons/fi";
 import { IconType } from "react-icons";
-import { ReactText } from "react";
 import NavItem from "./NavItem";
 
 interface LinkItemProps {

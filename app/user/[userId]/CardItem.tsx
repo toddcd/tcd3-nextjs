@@ -9,17 +9,26 @@ import {
   Stack,
   Image,
 } from "@chakra-ui/react";
+import React, { Dispatch, SetStateAction } from "react";
 
 const IMAGE =
   "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80";
 
-export default function CardItem({
-  copy,
-  title,
-}: {
+type Props = {
+  postId: string;
   copy: string;
   title: string;
-}) {
+  onOpen: () => void;
+  setPostId: Dispatch<React.SetStateAction<string | undefined>>;
+};
+
+export default function CardItem({
+  postId,
+  copy,
+  title,
+  onOpen,
+  setPostId,
+}: Props) {
   return (
     <Center py={12}>
       <Box
@@ -34,6 +43,10 @@ export default function CardItem({
         zIndex={1}
       >
         <Box
+          onClick={() => {
+            onOpen();
+            setPostId(postId);
+          }}
           rounded={"lg"}
           mt={-12}
           pos={"relative"}

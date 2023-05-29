@@ -15,7 +15,6 @@ const UserDetailsPage = async ({ params: { userId } }: Params) => {
 
   const [user, userPosts] = await Promise.all([userDetailData, userPostData]);
 
-  console.log(user);
   return (
     <>
       <UserDetails user={user} />
