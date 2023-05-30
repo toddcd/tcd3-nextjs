@@ -31,9 +31,13 @@ const PostDrawer = ({ isOpen, onClose, postId }: Props) => {
 
   return (
     <>
-      <Drawer isOpen={isOpen && !isLoading} placement="right" onClose={onClose}>
+      <Drawer
+        isOpen={isOpen && !isLoading}
+        placement="right"
+        onClose={onClose}
+        size="lg"
+      >
         <DrawerOverlay />
-
         <Formik
           initialValues={{
             title: data?.title,
