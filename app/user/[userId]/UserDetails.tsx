@@ -2,8 +2,11 @@
 
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
+import { useStore } from "../../../lib/store/store";
 
-const UserDetails = ({ user }: { user: User }) => {
+const UserDetails = () => {
+  const name = useStore.getState().user?.name;
+
   return (
     <Box bg="blue.100">
       <Text
@@ -13,7 +16,7 @@ const UserDetails = ({ user }: { user: User }) => {
         fontWeight="extrabold"
         ml="10px"
       >
-        {user.name}
+        {name}
       </Text>
     </Box>
   );
